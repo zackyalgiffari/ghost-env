@@ -1,0 +1,46 @@
+[package]
+name = "ghost-env"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/zackyalgiffari/ghost-env"
+description = "Protect secrets from AI terminal context leaks with encrypted vaults and decoy .env files."
+readme = "README.md"
+keywords = ["env", "secrets", "cli", "keychain", "security"]
+categories = ["command-line-utilities", "config"]
+
+[[bin]]
+name = "ghost-env"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+base64 = "0.22"
+chacha20poly1305 = { version = "0.10", features = ["std"] }
+clap = { version = "4.5", features = ["derive"] }
+hex = "0.4"
+keyring = { version = "3.6", features = ["apple-native", "windows-native", "linux-native"] }
+rand = "0.8"
+regex = "1.11"
+sha2 = "0.10"
+tempfile = "3.14"
+uuid = { version = "1.11", features = ["v4"] }
+zeroize = "1.8"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+
+[workspace.metadata.dist]
+cargo-dist-version = "0.28.0"
+ci = ["github"]
+installers = ["shell", "powershell", "homebrew"]
+tap = "zackyalgiffari/homebrew-tap"
+publish-jobs = ["homebrew"]
+targets = [
+  "x86_64-unknown-linux-gnu",
+  "aarch64-unknown-linux-gnu",
+  "x86_64-apple-darwin",
+  "aarch64-apple-darwin",
+  "x86_64-pc-windows-msvc",
+]

@@ -1,0 +1,10 @@
+# Winget package metadata for the v1 release process.
+# cargo-dist handles the release artifacts configured in Cargo.toml; Winget PRs can
+# use these coordinates when publishing from the generated GitHub Release.
+
+[winget]
+package_identifier = "zackyalgiffari.ghost-env"
+publisher = "zackyalgiffari"
+package_name = "ghost-env"
+short_description = "Protect secrets from AI terminal context leaks."
+repository = "https://github.com/zackyalgiffari/ghost-env"

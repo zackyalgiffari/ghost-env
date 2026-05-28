@@ -1,0 +1,4 @@
+/target/
+/.env.ghost
+/.env
+/.DS_Store

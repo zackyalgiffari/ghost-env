@@ -1,0 +1,21 @@
+name: Security-sensitive report
+description: Guidance for reporting security-sensitive issues.
+title: "security: "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not disclose vulnerability details publicly.
+
+        Use GitHub private vulnerability reporting if available:
+        https://github.com/zackyalgiffari/ghost-env/security/advisories/new
+
+        If private reporting is unavailable, submit only a minimal request for private contact. Do not attach vaults, key material, real `.env` files, or exploit details.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included real secrets or exploit details in this public issue.
+          required: true
